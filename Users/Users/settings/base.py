@@ -12,6 +12,7 @@ BASE_DIR = Path(__file__).ancestor(3)
 # SECURITY WARNING: keep the secret key used in production secret!
 with open("secret.json") as f:
     secret= json.loads(f.read())
+    
 def get_secret(secret_name,secrest=secret):
     try:
         return secrest[secret_name]
@@ -33,7 +34,10 @@ DJANGO_APPS = (
     'django.contrib.staticfiles',
 )
 
-LOCAL_APPS= ()
+LOCAL_APPS= (
+    'applications.users',
+    'applications.home',
+)
 
 THIRD_PARTY_APPS=()
 
@@ -88,6 +92,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+AUTH_USER_MODEL= 'users.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
