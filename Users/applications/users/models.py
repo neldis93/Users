@@ -13,9 +13,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
 
     username = models.CharField('Username', max_length=10, unique= True)
-    email = models.EmailField() # tiene que estra en unique= True porque los correos no pueden ser iguales
-    name = models.CharField('Name', max_length=30, blank=True)
-    last_name = models.CharField('Last name', max_length=30, blank=True)
+    email = models.EmailField(unique= True) # tiene que estra en unique= True porque los correos no pueden ser iguales
+    name = models.CharField('Name', max_length=30)
+    last_name = models.CharField('Last name', max_length=30)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
     code_register = models.CharField(max_length=6, blank=True)
 

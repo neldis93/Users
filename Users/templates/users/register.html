@@ -1,15 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-</head>
-<body>
-    <h1>Register new user</h1>
-    <form method="POST">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Register</button>
-    </form>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Register
+{% endblock title %}
+
+{% block content %}
+    {% include 'header.html' %}
+    <div class="container pt-3 my-3 border">
+        <h1>Register new user</h1>
+        <form method="POST" >{% csrf_token %}
+            <div class="col">
+                {{ form | crispy }} 
+            </div>
+                      
+            <div class="float-right">
+                <button type="submit" class="btn btn-info">Register</button>
+            </div>
+            
+        </form>
+    </div>
+{% endblock content %}
+        

@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Password</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Register
+{% endblock title %}
+
+{% block content %}
+    {% include 'header.html' %}
     <h1>Change Password: {{ user.get_full_name }}</h1> <!--get_full_name viene de models.py-->
     <form method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Update</button>
+        {{ form | crispy }}
+        <button type="submit" class="btn btn-info">Update</button>
     </form>
-</body>
-</html>
+    
+{% endblock content %}
