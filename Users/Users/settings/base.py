@@ -32,7 +32,6 @@ DJANGO_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -42,7 +41,9 @@ LOCAL_APPS= (
     'applications.home',
 )
 
-THIRD_PARTY_APPS=()
+THIRD_PARTY_APPS=(
+    'crispy_forms',
+)
 
 INSTALLED_APPS= DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
