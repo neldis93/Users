@@ -34,7 +34,6 @@ DJANGO_APPS = (
     'django.contrib.staticfiles',
 )
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOCAL_APPS= (
     'applications.users',
@@ -46,6 +45,8 @@ THIRD_PARTY_APPS=(
 )
 
 INSTALLED_APPS= DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
